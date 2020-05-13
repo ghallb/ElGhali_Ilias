@@ -8,7 +8,30 @@
 #include "core_simulation.h"
 
 
+ 
 // exemple de capteur analogique de temperature, ne pas oublier d'heriter de Device
+
+
+
+
+
+
+ class AnalogSensorLuminosity : public Device {
+private:
+     // fait osciller la valeur du capteur de 1
+  int alea;
+  // valeur de luminosite mesuree
+  int val;
+  // temps entre 2 prises de valeurs
+  int temps;
+public :
+   //constructeur ne pas oublier d'initialiser la classe mere
+  AnalogSensorLuminosity(int d,int  t);
+  // thread representant le capteur et permettant de fonctionner independamment de la board
+  virtual void run();
+
+};
+
 class AnalogSensorTemperature: public Device {
 private:
   // fait osciller la valeur du cpateur de 1
@@ -17,6 +40,7 @@ private:
   int val;
   // temps entre 2 prises de valeurs
   int temps;
+ 
   
 public:
   //constructeur ne pas oublier d'initialiser la classe mere
@@ -24,6 +48,24 @@ public:
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 };
+
+class IntelligentDigitalActuatorLED  : public Device  {
+private:
+  // etat de la LED
+  int state;
+  // temps entre 2 affichage de l etat de la led
+  int temps;
+  
+public:
+    // initialisation du temps de rafraichiisement
+  IntelligentDigitalActuatorLED(int t);
+  // thread representant l'actionneur et permettant de fonctionner independamment de la board
+  virtual void run();
+};
+
+
+
+
 
 // exemple d'actionneur digital : une led, ne pas oublier d'heriter de Device
 class DigitalActuatorLED: public Device {
@@ -40,6 +82,15 @@ public:
   virtual void run();
 };
 
+class ExternalDigitalSensorButton : public Device{
+ private :
+  bool state ;
+  int temps;
+  public:
+  ExternalDigitalSensorButton(bool b,int t);
+  // thread representant l'actionneur et permettant de fonctionner independamment de la board
+  virtual void run();
+   }; 
 // exemple d'actionneur sur le bus I2C permettant d'echanger des tableaux de caracteres : un ecran, ne pas oublier d'heriter de Device
 class I2CActuatorScreen : public Device{
 protected:
