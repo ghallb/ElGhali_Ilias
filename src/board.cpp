@@ -10,6 +10,8 @@ int main(){
   DigitalActuatorLED led1(DELAY);
   IntelligentDigitalActuatorLED led2(DELAY);
   I2CActuatorScreen screen;
+  
+  
   AnalogSensorLuminosity capteur(DELAY,luminosite_environnement);
   ExternalDigitalSensorButton bouton(false,DELAY);
   // branchement des capteurs actionneurs

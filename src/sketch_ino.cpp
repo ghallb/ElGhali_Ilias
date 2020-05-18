@@ -34,17 +34,22 @@ void Board::loop(){
     Serial.println(buf);
     sprintf(buf2,"luminosite %d",val2);
     Serial.println(buf2);
-     sprintf(buf3,"bouton %d",val3);
-    Serial.println(buf3);
+    if (val3==0) {
+       Serial.println("bouton OFF");
+	}
+      else  {
+       Serial.println("bouton ON");
+	}
+   
     
     if(cpt%5==0){
         // tous les 5 fois on affiche sur l ecran la temperature
       sprintf(buf,"%d",val);
       bus.write(1,buf,100);
       sprintf(buf2,"%d",val2);
-      bus.write(2,buf2,100);
+      bus.write(1,buf2,100);
        sprintf(buf3,"%d",val3);
-      bus.write(4,buf3,100);
+      bus.write(1,buf3,100);
     }
     cpt++;
     sleep(1);
@@ -52,12 +57,17 @@ void Board::loop(){
 // on eteint et on allume la LED
   if(bascule){
     digitalWrite(0,HIGH);
-    digitalWrite(3,HIGH);}
+    }
   else{
     digitalWrite(0,LOW);
-    digitalWrite(3,LOW);}
+  }
   bascule=1-bascule;
-  
+
+
+  if(analogRead(4)==1){
+    digitalWrite(3,HIGH);}
+  else{
+    digitalWrite(3,LOW);}
 }
 
 
