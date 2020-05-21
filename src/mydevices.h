@@ -9,45 +9,33 @@
 
 
  
-// exemple de capteur analogique de temperature, ne pas oublier d'heriter de Device
+// Toutes les devices et leurs classes filles
 
 
-
-
-
-
- class AnalogSensorLuminosity : public Device {
+ class Capteur : public Device {
 private:
      // fait osciller la valeur du capteur de 1
   int alea;
-  // valeur de luminosite mesuree
+  // valeur mesuree
   int val;
   // temps entre 2 prises de valeurs
   int temps;
 public :
    //constructeur ne pas oublier d'initialiser la classe mere
-  AnalogSensorLuminosity(int d,int  t);
+  Capteur(int d,int  t);
+
+  // méthode qui va traduire le string reçu "++" en chiffres
+  void traduire(string note);
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 
 };
 
-class AnalogSensorTemperature: public Device {
-private:
-  // fait osciller la valeur du cpateur de 1
-  int alea;
-  // valeur de temperature mesuree
-  int val;
-  // temps entre 2 prises de valeurs
-  int temps;
- 
-  
-public:
-  //constructeur ne pas oublier d'initialiser la classe mere
-  AnalogSensorTemperature(int d,int  t);
-  // thread representant le capteur et permettant de fonctionner independamment de la board
-  virtual void run();
-};
+
+
+
+
+
 
 class IntelligentDigitalActuatorLED  : public Device  {
 private:

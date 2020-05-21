@@ -6,34 +6,45 @@
 using namespace std;
 
 int inc = 0 ;
-//classe AnalogSensorTemperature
-AnalogSensorTemperature::AnalogSensorTemperature(int d,int  t):Device(),val(t),temps(d){
+//classe Capteur
+Capteur::Capteur(int t, int s) : Device(), val(s), temps(t){
   alea=1;
 }
 
-void AnalogSensorTemperature::run(){
+void Capteur::traduire(string note){
+ 
+    if (note=="+"){
+      val= 1;
+    }
+     if (note=="++"){
+      val= 2;
+    }
+      if (note=="+++"){
+      val= 3;
+    }
+       if (note=="-"){
+      val=-1;
+    }
+        if (note=="--"){
+      val= -2;
+    }
+	 if (note=="---"){
+      val= -3;
+    }
+	  if (note=="0"){
+	    val=0;
+    }
+}
+
+void Capteur::run(){
   while(1){
     alea=1-alea;
     if(ptrmem!=NULL)
-      *ptrmem=val+alea;
+      *ptrmem=val;
     sleep(temps);
   }
 }
 
-
-//classe AnalogSensorLuminosity
-AnalogSensorLuminosity::AnalogSensorLuminosity(int d,int  t):Device(),val(t),temps(d){
-  alea=1;
-}
-
-void AnalogSensorLuminosity::run(){
-  while(1){
-    alea=1-alea;
-    if(ptrmem!=NULL)
-      *ptrmem=val+alea+inc;
-    sleep(temps);
-  }
-}
 
 
 
@@ -64,10 +75,10 @@ void IntelligentDigitalActuatorLED::run(){
     if(ptrmem!=NULL)
       state=*ptrmem;
     if (state==LOW){
-      cout << "((((eteint))))\n";
+      cout << "((((eteintINT))))\n";
     inc=-50; }
     else{
-    cout << "((((allume))))\n";
+    cout << "((((allumeINT))))\n";
     inc=50; }
     sleep(temps);
     }

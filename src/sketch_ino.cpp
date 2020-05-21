@@ -51,6 +51,11 @@ void Board::loop(){
        sprintf(buf3,"%d",val3);
       bus.write(1,buf3,100);
     }
+    
+  if(val3==1){
+    digitalWrite(3,HIGH);}
+  else{
+    digitalWrite(3,LOW);}
     cpt++;
     sleep(1);
   }
@@ -64,10 +69,6 @@ void Board::loop(){
   bascule=1-bascule;
 
 
-  if(analogRead(4)==1){
-    digitalWrite(3,HIGH);}
-  else{
-    digitalWrite(3,LOW);}
 }
 
 
