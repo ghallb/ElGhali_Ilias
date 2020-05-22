@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int inc = 0 ;
+//int inc = 0 ;
 //classe Capteur
 Capteur::Capteur(int t, int s) : Device(), val(s), temps(t){
   alea=1;
@@ -37,7 +37,7 @@ void Capteur::traduire(string note){
 }
 
 
-int Capteur::getval()){
+int Capteur::getval(){
   return this->val ;
     }
 
@@ -51,49 +51,91 @@ void Capteur::run(){
 }
 
 
-
-
-
-//classe DigitalActuatorLED
-DigitalActuatorLED::DigitalActuatorLED(int t):Device(),state(LOW),temps(t){
+Actionneur::Actionneur(int t):Device(),temps(t) {
 }
 
-void DigitalActuatorLED::run(){
+
+void Actionneur::run(){
   while(1){
-    if(ptrmem!=NULL)
-      state=*ptrmem;
-    if (state==LOW)
-      cout << "((((eteint))))\n";
+    cout << "empty actionneur\n";
+    sleep(3);
+  }
+}
+  
+
+Moteur::Moteur(char c):Actionneur(1),corde(c),state(false),sens(1) {
+}
+
+void Moteur::switchM (){
+  if ((this->state)==true) {
+    (this->state)=false ;}
+ else {
+   (this->state)=true;}
+}
+
+void Moteur::setsens(int i) {
+  //exception si i vaut autre chose
+  if (i==1) {
+    (this->sens)=1 ;}
+    else if (i==-1) {
+      (this->sens)=-1 ;
+    }
+}
+
+void Moteur::run(){
+  while(1){
+    
+    if (state==false)
+      *ptrmem = 0;
     else
-    cout << "((((allume))))\n";
+      *ptrmem = 1 ;
+    
     sleep(temps);
     }
 }
 
 
-// classe IntelligentDigitalActuatorLED
-IntelligentDigitalActuatorLED::IntelligentDigitalActuatorLED(int t):Device(),state(LOW),temps(t){
-}
 
-void IntelligentDigitalActuatorLED::run(){
-  while(1){
-    if(ptrmem!=NULL)
-      state=*ptrmem;
-    if (state==LOW){
-      cout << "((((eteintINT))))\n";
-    inc=-50; }
-    else{
-    cout << "((((allumeINT))))\n";
-    inc=50; }
-    sleep(temps);
-    }
-}
+// //classe DigitalActuatorLED
+// DigitalActuatorLED::DigitalActuatorLED(int t):Device(),state(LOW),temps(t){
+// }
+
+// void DigitalActuatorLED::run(){
+//   while(1){
+//     if(ptrmem!=NULL)
+//       state=*ptrmem;
+//     if (state==LOW)
+//       cout << "((((eteint))))\n";
+//     else
+//     cout << "((((allume))))\n";
+//     sleep(temps);
+//     }
+// }
+
+
+// // classe IntelligentDigitalActuatorLED
+// IntelligentDigitalActuatorLED::IntelligentDigitalActuatorLED(int t):Device(),state(LOW),temps(t){
+// }
+
+// void IntelligentDigitalActuatorLED::run(){
+//   while(1){
+//     if(ptrmem!=NULL)
+//       state=*ptrmem;
+//     if (state==LOW){
+//       cout << "((((eteintINT))))\n";
+//     inc=-50; }
+//     else{
+//     cout << "((((allumeINT))))\n";
+//     inc=50; }
+//     sleep(temps);
+//     }
+// }
 
 //class Button
-Button::Button(bool b,char c):Device(),Actionneur(), state(b),corde(c){
+Button::Button(bool b,char c):Actionneur(3), state(b),corde(c){
 }
 
-Button::switchB() {
+void Button::switchB() {
   if(this->state==true){
     this->state=false;
 }
@@ -110,7 +152,8 @@ void Button::run(){
   while(1){
 if(state==true){
   *ptrmem=1 ;
-  
+  //a voir apres sa
+  // sprintf(S.buf,"%d",corde);
  }
  else{
    *ptrmem=0;

@@ -22,7 +22,7 @@ private:
   int temps;
 public :
    //constructeur ne pas oublier d'initialiser la classe mere
-  Capteur(int d,int  t);
+  Capteur(int t,int  s);
 
   // méthode qui va traduire le string reçu "++" en chiffres
   void traduire(string note);
@@ -39,43 +39,52 @@ public :
 
 
 
-class IntelligentDigitalActuatorLED  : public Device  {
-private:
-  // etat de la LED
-  int state;
-  // temps entre 2 affichage de l etat de la led
-  int temps;
+
+
+/* // exemple d'actionneur digital : une led, ne pas oublier d'heriter de Device */
+/* class LED: public Actionneur { */
+/* private: */
+/*   // etat de la LED */
+/*   bool state; */
+ 
   
-public:
-    // initialisation du temps de rafraichiisement
-  IntelligentDigitalActuatorLED(int t);
-  // thread representant l'actionneur et permettant de fonctionner independamment de la board
+/* public: */
+/*     // initialisation du temps de rafraichiisement */
+/*   LED(bool b); */
+/*   void switchLED(); */
+/*   // thread representant l'actionneur et permettant de fonctionner independamment de la board */
+/*   virtual void run(); */
+/* }; */
+
+class Actionneur : public Device {
+ protected :
+  int temps ;
+  // temps entre deux prises de valeur
+ public :
+  //constructeur
+ 
+  Actionneur (int t) ;
   virtual void run();
 };
-
-
-
-
-
-// exemple d'actionneur digital : une led, ne pas oublier d'heriter de Device
-class DigitalActuatorLED: public Device {
-private:
-  // etat de la LED
-  int state;
-  // temps entre 2 affichage de l etat de la led
-  int temps;
   
-public:
-    // initialisation du temps de rafraichiisement
-  DigitalActuatorLED(int t);
-  // thread representant l'actionneur et permettant de fonctionner independamment de la board
-  virtual void run();
+class Moteur : public Actionneur {
+private :
+char corde ;
+bool state ;
+int sens ;
+
+public :
+Moteur(char c) ;
+void switchM() ;
+void setsens(int i) ;
+virtual void run() ;
 };
 
 class Button : public Actionneur{
  private :
   bool state ;
   char corde;
+  //  I2CActuatorScreen S;
 
  public:
   Button(bool b,char c);
