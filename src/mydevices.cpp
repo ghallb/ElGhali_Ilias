@@ -36,6 +36,11 @@ void Capteur::traduire(string note){
     }
 }
 
+
+int Capteur::getval()){
+  return this->val ;
+    }
+
 void Capteur::run(){
   while(1){
     alea=1-alea;
@@ -84,19 +89,32 @@ void IntelligentDigitalActuatorLED::run(){
     }
 }
 
-//class ExternalDigitalSensorButton
-ExternalDigitalSensorButton::ExternalDigitalSensorButton(bool b,int t):Device(),state(b),temps(t){
+//class Button
+Button::Button(bool b,char c):Device(),Actionneur(), state(b),corde(c){
 }
 
-void  ExternalDigitalSensorButton::run(){
+Button::switchB() {
+  if(this->state==true){
+    this->state=false;
+}
+   else{
+    this->state=true;
+}
+
+}
+bool Button::getstate(){
+  return this->state;
+}
+  
+void Button::run(){
   while(1){
-if(ifstream("ON")){
+if(state==true){
   *ptrmem=1 ;
-  state=true;
+  
  }
  else{
    *ptrmem=0;
-   state=false;
+   
  }
   }
     sleep(temps);

@@ -26,6 +26,8 @@ public :
 
   // méthode qui va traduire le string reçu "++" en chiffres
   void traduire(string note);
+
+  int getval() ;
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 
@@ -70,12 +72,16 @@ public:
   virtual void run();
 };
 
-class ExternalDigitalSensorButton : public Device{
+class Button : public Actionneur{
  private :
   bool state ;
-  int temps;
-  public:
-  ExternalDigitalSensorButton(bool b,int t);
+  char corde;
+
+ public:
+  Button(bool b,char c);
+  bool getstate();
+  void switchB();
+  
   // thread representant l'actionneur et permettant de fonctionner independamment de la board
   virtual void run();
    }; 
