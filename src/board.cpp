@@ -22,7 +22,7 @@ int main(){
 	       Moteur M5('A');
 	         Moteur M6('E');
 		 Capteur C (DELAY,0);
-	         user U(B1,B2,B3,B4,B5,B6);
+		  user U(B1,B2,B3,B4,B5,B6);
 		 accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
 		 
        

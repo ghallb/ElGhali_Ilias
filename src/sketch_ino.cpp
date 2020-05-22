@@ -1,20 +1,39 @@
 #include <unistd.h>
 #include "core_simulation.h"
+#include "user.h"
+#include "accordeur.h"
+
 
 // la fonction d'initialisation d'arduino
 void Board::setup(){
   // on configure la vitesse de la liaison
   Serial.begin(9600);
 // on fixe les pin en entree et en sorite en fonction des capteurs/actionneurs mis sur la carte
-  pinMode(1,INPUT);
-  pinMode(0,OUTPUT);
-  pinMode(2,INPUT);
-  pinMode(3,OUTPUT);
-  pinMode(4,INPUT);
+  pinMode(0,INPUT);
+    pinMode(1,INPUT);
+      pinMode(2,INPUT);
+        pinMode(3,INPUT);
+	  pinMode(4,INPUT);
+	    pinMode(5,INPUT);
+  pinMode(6,OUTPUT);
+   pinMode(7,OUTPUT);
+    pinMode(8,OUTPUT);
+     pinMode(9,OUTPUT);
+      pinMode(10,OUTPUT);
+       pinMode(11,OUTPUT);
+  pinMode(12,INPUT);
+ 
 }
 
 // la boucle de controle arduino
 void Board::loop(){
+  //user U(B1,B2,B3,B4,B5,B6);
+  U.choisir_corde();
+  string note;
+  note= U.jouer_note() ;
+    
+  // accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
+  SmartCh(note,io);
   // char buf[100];
   //  char buf2[100];
   //   char buf3[100];

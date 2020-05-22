@@ -20,7 +20,7 @@ class accordeur {
  public :
 
    accordeur(Button b1 ,Button b2,Button b3,Button b4,Button b5,Button b6,Moteur m1,Moteur m2,Moteur m3,Moteur m4,Moteur m5,Moteur m6,Capteur c) ;
-   void accorder(string note) ;
+   void accorder(string note,unsigned short port[MAX_IO_PIN]) ;
    
 
    

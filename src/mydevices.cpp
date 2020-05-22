@@ -83,13 +83,21 @@ void Moteur::setsens(int i) {
 }
 
 void Moteur::run(){
-  while(1){
+  // while(1){
     
-    if (state==false)
-      *ptrmem = 0;
-    else
-      *ptrmem = 1 ;
+  //   if (state==false)
+  //     *ptrmem = 0;
+  //   else
+  //     *ptrmem = 1 ;
     
+  //   sleep(temps);
+  //   }
+    while(1){
+    if(ptrmem!=NULL)
+      state=*ptrmem;
+    if (state==true)
+      cout << "((((cha3el))))\n";
+   
     sleep(temps);
     }
 }

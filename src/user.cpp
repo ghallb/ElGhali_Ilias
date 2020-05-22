@@ -11,6 +11,7 @@ user :: user(Button b11, Button b22,Button b33,Button b44,Button b55,Button b66)
   }
 
 void user :: choisir_corde() {
+  
 
   if (ifstream("mi")) {
     b1.switchB();
