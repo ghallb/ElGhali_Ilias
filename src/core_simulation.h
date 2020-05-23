@@ -26,6 +26,8 @@
 #define I2C_BUFFER_SIZE 1024
 #define MAX_IO_PIN 16
 
+class accordeur;
+class user;
 
 using namespace std;
 
@@ -114,12 +116,14 @@ public:
     // representation de la liaison terminal
   Terminal Serial;
 
-  accordeur Monaccordeur;
-  user Monuser;
+  accordeur * Monaccordeur;
+  user * Monuser;
 
-  Board(accordeur mine, user mineU);
+  Board();
     // threads representant chaque senseur/actionneur sur le bus I2C
   thread *tabthreadbus[MAX_I2C_DEVICES];
+
+  void initAU(accordeur * mine, user * mineU);
     
 // simulation de la boucle de controle arduino
     void run();

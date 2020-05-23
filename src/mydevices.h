@@ -5,9 +5,8 @@
 #include <thread>
 #include <unistd.h>
 #include <string>
-//#include "core_simulation.h"
-#include "accordeur.h"
-#include "user.h"
+#include "core_simulation.h"
+
 
 
 

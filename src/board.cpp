@@ -28,7 +28,8 @@ int main(){
 		 accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
 		 
   // creation d'une board
-		 Board esp8266(SmartCh,U);      
+		 Board esp8266();
+		 esp8266.initAU(&SmartCh,&U);
 
  
   //I2CActuatorScreen screen;
