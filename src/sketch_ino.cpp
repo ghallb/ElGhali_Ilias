@@ -28,12 +28,12 @@ void Board::setup(){
 // la boucle de controle arduino
 void Board::loop(){
   //user U(B1,B2,B3,B4,B5,B6);
-  // U.choisir_corde();
-  // string note;
-  // note= U.jouer_note() ;
+   Monuser->choisir_corde();
+   string note;
+  note= Monuser->jouer_note() ;
     
   // accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
-  SmartCh(note,io);
+  Monaccordeur->accorder(note,io);
   // char buf[100];
   //  char buf2[100];
   //   char buf3[100];
