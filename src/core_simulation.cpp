@@ -1,9 +1,9 @@
-
+#include "core_simulation.h"
 #include <thread>
 #include <unistd.h>
-#include <string.h>
+#include <string>
 
-#include "core_simulation.h"
+
 
 // class BoardException
 int BoardException::get(){return num;}
@@ -115,6 +115,8 @@ void Device::setI2CAddr(int addr, I2C * bus){
 }
 
 // classe representant une carte arduino
+
+Board :: Board(accordeur mine, user mineU) : Monaccordeur(mine),Monuser(mineU) {}
 void Board::run(){
   try{
     setup();

@@ -1,12 +1,14 @@
+
 #include "core_simulation.h"
 #include "mydevices.h"
-#include "user.h"
 #include "accordeur.h"
+#include "user.h"
 
+
+#include <string>
 
 int main(){
-  // creation d'une board
-  Board esp8266;
+ 
   // achat des senseurs et actionneurs
 
   Button B1(false,'e');
@@ -25,7 +27,8 @@ int main(){
 		  user U(B1,B2,B3,B4,B5,B6);
 		 accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
 		 
-       
+  // creation d'une board
+		 Board esp8266(SmartCh,U);      
 
  
   //I2CActuatorScreen screen;

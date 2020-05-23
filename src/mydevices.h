@@ -4,8 +4,13 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
-#include <string.h>
-#include "core_simulation.h"
+#include <string>
+//#include "core_simulation.h"
+#include "accordeur.h"
+#include "user.h"
+
+
+
 
 
  
@@ -25,7 +30,7 @@ public :
   Capteur(int t,int  s);
 
   // méthode qui va traduire le string reçu "++" en chiffres
-  void traduire(string note);
+  void traduire(std::string note);
 
   int getval() ;
   // thread representant le capteur et permettant de fonctionner independamment de la board

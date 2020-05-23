@@ -5,10 +5,11 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
-#include <string.h>
+#include <string>
+//#include "mydevices.h"
 #include "core_simulation.h"
-#include "mydevices.h"
-#include "user.h"
+
+
 
 class accordeur {
  private :

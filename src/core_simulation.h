@@ -9,11 +9,15 @@
 #define sleep(x) Sleep(1000 * (x))
 #endif
 
+
 #include <iostream>
 #include <string>
 #include <thread>
 #include <mutex>
+/* #include "accordeur.h" */
+/* #include "user.h" */
 
+#include <string>
 #define DELAY 3
 #define TEMP 22
 #define HIGH 1
@@ -109,6 +113,11 @@ public:
   I2C bus;
     // representation de la liaison terminal
   Terminal Serial;
+
+  accordeur Monaccordeur;
+  user Monuser;
+
+  Board(accordeur mine, user mineU);
     // threads representant chaque senseur/actionneur sur le bus I2C
   thread *tabthreadbus[MAX_I2C_DEVICES];
     

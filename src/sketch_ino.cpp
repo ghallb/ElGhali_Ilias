@@ -1,8 +1,8 @@
-#include <unistd.h>
 #include "core_simulation.h"
-#include "user.h"
-#include "accordeur.h"
+#include <unistd.h>
 
+
+#include <string>
 
 // la fonction d'initialisation d'arduino
 void Board::setup(){
@@ -28,9 +28,9 @@ void Board::setup(){
 // la boucle de controle arduino
 void Board::loop(){
   //user U(B1,B2,B3,B4,B5,B6);
-  U.choisir_corde();
-  string note;
-  note= U.jouer_note() ;
+  // U.choisir_corde();
+  // string note;
+  // note= U.jouer_note() ;
     
   // accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
   SmartCh(note,io);
