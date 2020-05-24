@@ -11,21 +11,34 @@ int main(){
  
   // achat des senseurs et actionneurs
 
-  Button B1(false,'e');
-   Button B2(false,'B');
-    Button B3(false,'G');
-     Button B4(false,'D');
-      Button B5(false,'A');
-       Button B6(false,'E');
-       Moteur M1('e');
-         Moteur M2('B');
-	   Moteur M3('G');
-	     Moteur M4('D');
-	       Moteur M5('A');
-	         Moteur M6('E');
-		 Capteur C (DELAY,0);
-		  user U(B1,B2,B3,B4,B5,B6);
-		 accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
+  Button  B1(false,'e');
+  Button & MarefB1 = B1;
+   Button  B2(false,'B');
+  Button & MarefB2 = B2;
+    Button  B3(false,'G');
+Button & MarefB3 = B3;
+     Button  B4(false,'D');
+Button & MarefB4 = B4;
+      Button  B5(false,'A');
+Button & MarefB5 = B5;
+       Button  B6(false,'E');
+Button & MarefB6 = B6;
+       Moteur  M1('e');
+Moteur & MarefM1 = M1;
+         Moteur  M2('B');
+Moteur & MarefM2 = M2;
+	   Moteur  M3('G');
+Moteur & MarefM3 = M3;
+	     Moteur  M4('D');
+Moteur & MarefM4 = M4;
+	       Moteur  M5('A');
+Moteur & MarefM5 = M5;
+	         Moteur  M6('E');
+Moteur & MarefM6 = M6;
+		 Capteur  C (DELAY,0);
+Capteur & MarefC = C;
+		  user U(MarefB1,MarefB2,MarefB3,MarefB4,MarefB5,MarefB6);
+		 accordeur SmartCh(MarefB1, MarefB2, MarefB3,MarefB4,MarefB5,MarefB6,MarefM1,MarefM2,MarefM3,MarefM4,MarefM5,MarefM6,MarefC);
 		 
   // creation d'une board
 		 Board esp8266;

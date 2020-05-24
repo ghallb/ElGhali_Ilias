@@ -11,7 +11,9 @@ using namespace std;
 Capteur::Capteur(int t, int s) : Device(), val(s), temps(t){
   alea=1;
 }
-
+Capteur::Capteur(const Capteur & C) : Device(), val(C.val), temps(C.temps){
+  alea=1;
+}
 void Capteur::traduire(string note){
  
     if (note=="+"){
@@ -66,7 +68,8 @@ void Actionneur::run(){
 
 Moteur::Moteur(char c):Actionneur(1),corde(c),state(false),sens(1) {
 }
-
+Moteur::Moteur( const Moteur & M):Actionneur(1),corde(M.corde),state(false),sens(1) {
+}
 void Moteur::switchM (){
   if ((this->state)==true) {
     (this->state)=false ;}
@@ -144,12 +147,16 @@ void Moteur::run(){
 Button::Button(bool b,char c):Actionneur(3), state(b),corde(c){
 }
 
+Button :: Button(const Button & B) : Actionneur(3), state(B.state), corde(B.corde){
+}
 void Button::switchB() {
   if(this->state==true){
     this->state=false;
 }
    else{
+    
     this->state=true;
+//cout << state ;
 }
 
 }
@@ -159,17 +166,23 @@ bool Button::getstate(){
   
 void Button::run(){
   while(1){
-if(state==true){
+if (ptrmem != NULL) {
+//cout << state ;
+if(state==1){
+   
   *ptrmem=1 ;
   //a voir apres sa
   // sprintf(S.buf,"%d",corde);
  }
  else{
+
    *ptrmem=0;
    
  }
+sleep(1);
+}
   }
-    sleep(temps);
+    
     }
 
 // classe I2CActuatorScreen

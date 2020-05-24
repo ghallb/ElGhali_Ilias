@@ -27,6 +27,7 @@ private:
 public :
    //constructeur ne pas oublier d'initialiser la classe mere
   Capteur(int t,int  s);
+Capteur( const Capteur & C);
 
   // méthode qui va traduire le string reçu "++" en chiffres
   void traduire(std::string note);
@@ -79,6 +80,7 @@ int sens ;
 
 public :
 Moteur(char c) ;
+Moteur( const Moteur & M);
 void switchM() ;
 void setsens(int i) ;
 virtual void run() ;
@@ -92,6 +94,7 @@ class Button : public Actionneur{
 
  public:
   Button(bool b,char c);
+  Button( const Button & B);
   bool getstate();
   void switchB();
   
