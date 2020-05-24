@@ -13,7 +13,12 @@ int main(){
 
   I2CActuatorScreen S1;
   I2CActuatorScreen & MarefS1 = S1;
-
+  ILED Lbleu("bleu");
+  ILED & MarefLb = Lbleu;
+  ILED Lverte("verte");
+  ILED & MarefLv= Lverte;
+  ILED Lrouge("rouge");
+  ILED & MarefLr= Lrouge;
   Button  B1(false,'e');
   Button & MarefB1 = B1;
    Button  B2(false,'B');
@@ -41,7 +46,8 @@ Moteur & MarefM6 = M6;
 		 Capteur  C (DELAY,0);
 Capteur & MarefC = C;
 		  user U(MarefB1,MarefB2,MarefB3,MarefB4,MarefB5,MarefB6,MarefS1);
-		 accordeur SmartCh(MarefB1, MarefB2, MarefB3,MarefB4,MarefB5,MarefB6,MarefM1,MarefM2,MarefM3,MarefM4,MarefM5,MarefM6,MarefC);
+		 accordeur SmartCh(MarefB1, MarefB2, MarefB3,MarefB4,MarefB5,MarefB6,MarefM1,MarefM2,MarefM3,MarefM4,MarefM5,MarefM6,MarefC,
+MarefLb,MarefLv,MarefLr);
 		 
   // creation d'une board
 		 Board esp8266;
@@ -74,6 +80,10 @@ Capteur & MarefC = C;
  esp8266.pin(11,M6);
 
   esp8266.pin(12,C);
+esp8266.pin(13,Lbleu);
+esp8266.pin(14,Lverte);
+esp8266.pin(15,Lrouge);
+
   esp8266.i2c(1,MarefS1);
   
   

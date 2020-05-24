@@ -30,6 +30,9 @@ void Board::setup(){
 // la boucle de controle arduino
 void Board::loop(){
   //user U(B1,B2,B3,B4,B5,B6);
+   this->io[15]=0;
+   this->io[14]=0;
+   this->io[13]=0;
    Monuser->choisir_corde();
  bus.write(1,Monuser->getS().getbuf(),100);
    string note;

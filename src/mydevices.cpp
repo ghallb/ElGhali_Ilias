@@ -186,6 +186,39 @@ sleep(1);
     
     }
 
+ILED::ILED( string c):Actionneur(3),state(LOW),couleur(c){
+}
+//void ILED::SetCouleur(char c) {
+//this->couleur = c ;
+//}
+
+//void ILED::switchLED(){
+  //if(this->state==true){
+    //this->state=false;
+//}
+  // else{
+    
+    //this->state=true;
+
+//}
+
+//}
+void ILED::run(){
+  while(1){
+    if(ptrmem!=NULL)
+      state=*ptrmem;
+    if (state==LOW){
+      }
+      
+     // cout << "((((_eteint))))\n";
+      
+    else {
+    cout << "La LED"<< this->couleur << endl ;   
+    cout << "((((_allume))))\n";}
+    sleep(temps);
+    }
+}
+
 // classe I2CActuatorScreen
 I2CActuatorScreen::I2CActuatorScreen ():Device(){
   }
