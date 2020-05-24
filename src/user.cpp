@@ -13,36 +13,46 @@ user :: user(Button & b11, Button & b22,Button & b33,Button & b44,Button & b55,B
 
 void user :: choisir_corde() { 
   
-
+ cout << "Choisir votre corde sur le répertoire en renommant le fichier texte et taper ok " << endl;
+string ok;
+cin >> ok;
   if (ifstream("mi")) {
     b1.switchB();
-    sprintf(screen.buf,"%c",'E');
+
+    S.setbuf('e');
  }
    if (ifstream("si")) {
     b2.switchB();
-  sprintf(screen.buf,"%c",'B');
+   S.setbuf('B');
  }
     if (ifstream("sol")) {
      
     b3.switchB();
-sprintf(screen.buf,"%c",'G');
+S.setbuf('G');
     //cout << b3.getstate();
  }
      if (ifstream("ré")) {
     b4.switchB();
-sprintf(screen.buf,"%c",'D');
+
+S.setbuf('D');
  }
       if (ifstream("la")) {
     b5.switchB();
-sprintf(screen.buf,"%c",'A');
+S.setbuf('A');
+
  }
        if (ifstream("MI")) {
     b6.switchB();
-sprintf(screen.buf,"%c",'E');
+S.setbuf('E');
+
  }
   
 }
 
+
+I2CActuatorScreen & user:: getS(){
+    return S;
+}
 
 string user:: jouer_note()  {
 

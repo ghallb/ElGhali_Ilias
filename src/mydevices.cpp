@@ -66,7 +66,7 @@ void Actionneur::run(){
 }
   
 
-Moteur::Moteur(char c):Actionneur(1),corde(c),state(false),sens(1) {
+Moteur::Moteur(char c):Actionneur(1),corde(c),state(false),sens(0) {
 }
 Moteur::Moteur( const Moteur & M):Actionneur(1),corde(M.corde),state(false),sens(1) {
 }
@@ -190,6 +190,12 @@ sleep(1);
 I2CActuatorScreen::I2CActuatorScreen ():Device(){
   }
 
+void I2CActuatorScreen :: setbuf(char c){
+sprintf(buf,"%c",c) ;
+  }
+char * I2CActuatorScreen :: getbuf(){
+return buf ;
+  }
 void I2CActuatorScreen::run(){
   while(1){
     if ( (i2cbus!=NULL)&&!(i2cbus->isEmptyRegister(i2caddr))){

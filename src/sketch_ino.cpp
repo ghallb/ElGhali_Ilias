@@ -31,9 +31,10 @@ void Board::setup(){
 void Board::loop(){
   //user U(B1,B2,B3,B4,B5,B6);
    Monuser->choisir_corde();
+ bus.write(1,Monuser->getS().getbuf(),100);
    string note;
    note= Monuser->jouer_note() ;
-    
+  
   // accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
   //cout << Monuser->getb3().getstate() ;
 

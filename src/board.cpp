@@ -11,7 +11,8 @@ int main(){
  
   // achat des senseurs et actionneurs
 
-  
+  I2CActuatorScreen S1;
+  I2CActuatorScreen & MarefS1 = S1;
 
   Button  B1(false,'e');
   Button & MarefB1 = B1;
@@ -39,7 +40,7 @@ Moteur & MarefM5 = M5;
 Moteur & MarefM6 = M6;
 		 Capteur  C (DELAY,0);
 Capteur & MarefC = C;
-		  user U(MarefB1,MarefB2,MarefB3,MarefB4,MarefB5,MarefB6);
+		  user U(MarefB1,MarefB2,MarefB3,MarefB4,MarefB5,MarefB6,MarefS1);
 		 accordeur SmartCh(MarefB1, MarefB2, MarefB3,MarefB4,MarefB5,MarefB6,MarefM1,MarefM2,MarefM3,MarefM4,MarefM5,MarefM6,MarefC);
 		 
   // creation d'une board
@@ -73,7 +74,7 @@ Capteur & MarefC = C;
  esp8266.pin(11,M6);
 
   esp8266.pin(12,C);
-  //esp8266.i2c(1,screen);
+  esp8266.i2c(1,MarefS1);
   
   
   

@@ -25,6 +25,7 @@
    void choisir_corde();
    string jouer_note();
    Button getb3();
+   I2CActuatorScreen & getS();
 
    
 };

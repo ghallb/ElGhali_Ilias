@@ -110,6 +110,8 @@ protected:
 public:
   // constructeur
   I2CActuatorScreen ();
+  void setbuf(char c);
+  char * getbuf();
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 };

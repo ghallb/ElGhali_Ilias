@@ -13,10 +13,10 @@ Button & accordeur :: getbsol() {
 return  (* this).bsol;
 }
 void accordeur :: accorder(string note,unsigned short port[]) {
+
   //vérifier le bouton allumé, donc la corde à accorder
 //cout << bsol.getstate() << "z" ;
   if (bmi.getstate()==true) {
-cout << "accorder mi" ;
 
     //traduire la note par une valeur grace au capteur
     capt.traduire(note);
