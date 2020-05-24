@@ -23,6 +23,7 @@ void accordeur :: accorder(string note,unsigned short port[]) {
     capt.traduire(note);
     //récupérerla valeur du capteur, allumer le moteur un certain temps pour faire tourner le piston, puis l'éteindre, et enfin switch le bouton en OFF
     if (capt.getval()==1){
+      
       port[15]=1;
       //asseceur à définir, permettant de fixer le sens de rotation du moteur
       mmi.setsens(1);

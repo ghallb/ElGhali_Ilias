@@ -66,7 +66,7 @@ void Actionneur::run(){
 }
   
 
-Moteur::Moteur(char c):Actionneur(1),corde(c),state(false),sens(0) {
+Moteur::Moteur(char c):Actionneur(2),corde(c),state(false),sens(0) {
 }
 Moteur::Moteur( const Moteur & M):Actionneur(1),corde(M.corde),state(false),sens(1) {
 }
@@ -99,10 +99,16 @@ void Moteur::run(){
     while(1){
     if(ptrmem!=NULL)
       state=*ptrmem;
-    if ((state==true) and (sens==1))
+    if ((state==true) and (sens==1)){ sleep(1);
       cout << "((((moteur sens positif allumé : en train d'accorder))))\n";
-else if ((state==true) and (sens==-1))
+}
+     
+else if ((state==true) and (sens==-1)){
+sleep(1);
    cout << "((((moteur sens négatif allumé : en train d'accorder))))\n";
+}
+
+   
     sleep(temps);
     }
 }
@@ -186,7 +192,7 @@ sleep(1);
     
     }
 
-ILED::ILED( string c):Actionneur(3),state(LOW),couleur(c){
+ILED::ILED( string c):Actionneur(1),state(LOW),couleur(c){
 }
 //void ILED::SetCouleur(char c) {
 //this->couleur = c ;
