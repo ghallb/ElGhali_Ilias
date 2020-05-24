@@ -17,6 +17,7 @@ class accordeur {
    Button & bmi, & bsi,& bsol,& bre,& bla,& bMI ;
    Moteur & mmi,& msi,& msol,& mre,& mla,& mMI ;
    Capteur & capt ;
+   
 
  public :
 

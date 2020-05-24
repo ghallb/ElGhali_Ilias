@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-accordeur ::  accordeur(Button & b1 ,Button & b2,Button & b3,Button & b4,Button & b5,Button & b6,Moteur & m1,Moteur & m2,Moteur & m3,Moteur & m4,Moteur & m5,Moteur & m6,Capteur & c) : bmi(b1) ,bsi(b2),bsol(b3),bre(b4),bla(b5),bMI(b6),mmi(m1),msi(m2),msol(m3),mre(m4),mla(m5),mMI(m6),capt(c) {}
+accordeur ::  accordeur(Button & b1 ,Button & b2,Button & b3,Button & b4,Button & b5,Button & b6,Moteur & m1,Moteur & m2,Moteur & m3,Moteur & m4,Moteur & m5,Moteur & m6,Capteur & c, I2CActuatorScreen S) : bmi(b1) ,bsi(b2),bsol(b3),bre(b4),bla(b5),bMI(b6),mmi(m1),msi(m2),msol(m3),mre(m4),mla(m5),mMI(m6),capt(c)) {}
 
 
 Button & accordeur :: getbsol() {
@@ -17,6 +17,7 @@ void accordeur :: accorder(string note,unsigned short port[]) {
 //cout << bsol.getstate() << "z" ;
   if (bmi.getstate()==true) {
 cout << "accorder mi" ;
+
     //traduire la note par une valeur grace au capteur
     capt.traduire(note);
     //récupérerla valeur du capteur, allumer le moteur un certain temps pour faire tourner le piston, puis l'éteindre, et enfin switch le bouton en OFF
