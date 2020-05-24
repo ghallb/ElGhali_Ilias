@@ -14,8 +14,8 @@
 class accordeur {
  private :
    // L'accordeur doit interagir avec tous les devices 
-   Button & bmi,bsi,bsol,bre,bla,bMI ;
-   Moteur & mmi,msi,msol,mre,mla,mMI ;
+   Button & bmi, & bsi,& bsol,& bre,& bla,& bMI ;
+   Moteur & mmi,& msi,& msol,& mre,& mla,& mMI ;
    Capteur & capt ;
 
  public :

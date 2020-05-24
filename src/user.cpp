@@ -47,7 +47,7 @@ void user :: choisir_corde() {
 string user:: jouer_note()  {
 
   string note;
-cout << b3.getstate()<<"ilias";
+//cout << b3.getstate()<<"ilias";
   cout << "Jouer votre note" ;
   cin >> note ;
 

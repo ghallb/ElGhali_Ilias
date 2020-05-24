@@ -16,6 +16,7 @@ void accordeur :: accorder(string note,unsigned short port[]) {
   //vérifier le bouton allumé, donc la corde à accorder
 //cout << bsol.getstate() << "z" ;
   if (bmi.getstate()==true) {
+cout << "accorder mi" ;
     //traduire la note par une valeur grace au capteur
     capt.traduire(note);
     //récupérerla valeur du capteur, allumer le moteur un certain temps pour faire tourner le piston, puis l'éteindre, et enfin switch le bouton en OFF
@@ -23,116 +24,116 @@ void accordeur :: accorder(string note,unsigned short port[]) {
       //asseceur à définir, permettant de fixer le sens de rotation du moteur
       mmi.setsens(1);
       // mmi.switchM();
-       port[0]=1;
+       port[6]=1;
       sleep(1);
       // mmi.switchM();
-       port[0]=0;
+       port[6]=0;
       bmi.switchB();
   }
      else if (capt.getval()==2){
        mmi.setsens(1);
        //mmi.switchM();
-        port[0]=1;
+        port[6]=1;
       sleep(2);
       //mmi.switchM();
-       port[0]=0;
+       port[6]=0;
       bmi.switchB();
   }
      else if (capt.getval()==3){
 	mmi.setsens(1);  
 	//mmi.switchM();
-	 port[0]=1;
+	 port[6]=1;
       sleep(3);
       //mmi.switchM();
-       port[0]=0;
+       port[6]=0;
       bmi.switchB();
   }
      else if (capt.getval()==-1){
 	mmi.setsens(-1);  
 	//mmi.switchM();
-	 port[0]=1;
+	 port[6]=1;
       sleep(1);
       //mmi.switchM();
-       port[0]=0;
+       port[6]=0;
       bmi.switchB();
   }
      else if (capt.getval()==-2){
 	mmi.setsens(-1);  
 	//mmi.switchM();
-	 port[0]=1;
+	 port[6]=1;
       sleep(2);
       //mmi.switchM();
-       port[0]=0;
+       port[6]=0;
       bmi.switchB();
   }
      else if (capt.getval()==-3){
 	mmi.setsens(-1);  
 	//mmi.switchM();
-	 port[0]=1;
+	 port[6]=1;
       sleep(3);
       //mmi.switchM();
-       port[0]=0;
+       port[6]=0;
       bmi.switchB();
   }
     
   }
     else if (bsi.getstate()==true) {
-        
+        cout << "accorder si";
     capt.traduire(note);
   
     if (capt.getval()==1){
      
       msi.setsens(1);
       //msi.switchM();
-       port[1]=1;
+       port[7]=1;
       sleep(1);
       //msi.switchM();
-       port[1]=0;
+       port[7]=0;
       bsi.switchB();
   }
      else if (capt.getval()==2){
        msi.setsens(1);
        //msi.switchM();
-        port[1]=1;
+        port[7]=1;
       sleep(2);
       //msi.switchM();
-       port[1]=0;
+       port[7]=0;
       bsi.switchB();
   }
      else if (capt.getval()==3){
 	msi.setsens(1);  
 	//msi.switchM();
-	 port[1]=1;
+	 port[7]=1;
       sleep(3);
       //msi.switchM();
-       port[1]=0;
+       port[7]=0;
       bsi.switchB();
   }
      else if (capt.getval()==-1){
 	msi.setsens(-1);  
 	//msi.switchM();
-	 port[1]=1;
+	 port[7]=1;
       sleep(1);
       //msi.switchM();
-       port[1]=0;
+       port[7]=0;
       bsi.switchB();
   }
      else if (capt.getval()==-2){
 	msi.setsens(-1);  
 	//msi.switchM();
-	 port[1]=1;
+	 port[7]=1;
       sleep(2);
       //msi.switchM();
-       port[1]=0;
+       port[7]=0;
       bsi.switchB();
   }
      else if  (capt.getval()==-3){
 	msi.setsens(-1);  
 	//msi.switchM();
-	 port[1]=1;
+	 port[7]=1;
       sleep(3);
       //msi.switchM();
-       port[1]=0;
+       port[7]=0;
       bsi.switchB();
   }
 
@@ -146,55 +147,56 @@ cout<< "accorderSol";
      
       msol.setsens(1);
       //msol.switchM();
-       port[2]=1;
+       port[8]=1;
       sleep(1);
       //msol.switchM();
-       port[2]=0;
+       port[8]=0;
       bsol.switchB();
   }
      else if (capt.getval()==2){
        msol.setsens(1);
        //msol.switchM();
-        port[2]=1;
+        port[8]=1;
+
       sleep(2);
       //msol.switchM();
-      port[2]=0;
+      port[8]=0;
       bsol.switchB();
   }
      else if (capt.getval()==3){
 	msol.setsens(1);  
 	//msol.switchM();
-	 port[2]=1;
+	 port[8]=1;
       sleep(3);
       //msol.switchM();
-      port[2]=0;
+      port[8]=0;
       bsol.switchB();
   }
      else if (capt.getval()==-1){
 	msol.setsens(-1);  
 	//msol.switchM();
-	 port[2]=1;
+	 port[8]=1;
       sleep(1);
       //msol.switchM();
-      port[2]=0;
+      port[8]=0;
       bsol.switchB();
   }
      else if (capt.getval()==-2){
 	msol.setsens(-1);  
 	//msol.switchM();
-	 port[2]=1;
+	 port[8]=1;
       sleep(2);
       //msol.switchM();
-      port[2]=0;
+      port[8]=0;
       bsol.switchB();
   }
      else if (capt.getval()==-3){
 	msol.setsens(-1);  
 	//msol.switchM();
-	 port[2]=1;
+	 port[8]=1;
       sleep(3);
       //msol.switchM();
-      port[2]=0;
+      port[8]=0;
       bsol.switchB();
   }
 
@@ -209,55 +211,55 @@ cout<< "accorderSol";
      
       mre.setsens(1);
       //mre.switchM();
-       port[3]=1;
+       port[9]=1;
       sleep(1*0.8);
       //mre.switchM();
-      port[3]=0;
+      port[9]=0;
       bre.switchB();
   }
      else if (capt.getval()==2){
        mre.setsens(1);
        //mre.switchM();
-        port[3]=1;
+        port[9]=1;
       sleep(2*0.8);
       //mre.switchM();
-      port[3]=0;
+      port[9]=0;
       bre.switchB();
   }
      else if (capt.getval()==3){
 	mre.setsens(1);  
 	//mre.switchM();
-	 port[3]=1;
+	 port[9]=1;
       sleep(3*0.8);
       //mre.switchM();
-      port[3]=0;
+      port[9]=0;
       bre.switchB();
   }
      else if (capt.getval()==-1){
 	mre.setsens(-1);  
 	//mre.switchM();
-	 port[3]=1;
+	 port[9]=1;
       sleep(1*0.8);
       //mre.switchM();
-      port[3]=0;
+      port[9]=0;
       bre.switchB();
   }
      else if (capt.getval()==-2){
 	mre.setsens(-1);  
 	//mre.switchM();
-	 port[3]=1;
+	 port[9]=1;
       sleep(2*0.8);
       //mre.switchM();
-      port[3]=0;
+      port[9]=0;
       bre.switchB();
   }
      else if (capt.getval()==-3){
 	mre.setsens(-1);  
 	//mre.switchM();
-	 port[3]=1;
+	 port[9]=1;
       sleep(3*0.8);
       //mre.switchM();
-      port[3]=0;
+      port[9]=0;
       bre.switchB();
   }
 
@@ -272,55 +274,55 @@ cout<< "accorderSol";
      
       mla.setsens(1);
       //mla.switchM();
-       port[4]=1;
+       port[10]=1;
       sleep(1*0.5);
       //mla.switchM();
-      port[4]=0;
+      port[10]=0;
       bla.switchB();
   }
      else if (capt.getval()==2){
        mla.setsens(1);
        //mla.switchM();
-        port[4]=1;
+        port[10]=1;
       sleep(2*0.5);
       //mla.switchM();
-      port[4]=0;
+      port[10]=0;
       bla.switchB();
   }
      else if (capt.getval()==3){
 	mla.setsens(1);  
 	//mla.switchM();
-	 port[4]=1;
+	 port[10]=1;
       sleep(3*0.5);
       //mla.switchM();
-      port[4]=0;
+      port[10]=0;
       bla.switchB();
   }
      else if (capt.getval()==-1){
 	mla.setsens(-1);  
 	//mla.switchM();
-	 port[4]=1;
+	 port[10]=1;
       sleep(1*0.5);
       //mla.switchM();
-      port[4]=0;
+      port[10]=0;
       bla.switchB();
   }
      else if (capt.getval()==-2){
 	mla.setsens(-1);  
 	//mla.switchM();
-	 port[4]=1;
+	 port[10]=1;
       sleep(2*0.5);
       //mla.switchM();
-      port[4]=0;
+      port[10]=0;
       bla.switchB();
   }
      else if (capt.getval()==-3){
 	mla.setsens(-1);  
 	//mla.switchM();
-	 port[4]=1;
+	 port[10]=1;
       sleep(3*0.5);
       //mla.switchM();
-      port[4]=0;
+      port[10]=0;
       bla.switchB();
   }
 
@@ -332,55 +334,55 @@ cout<< "accorderSol";
      
       mMI.setsens(1);
       //mMI.switchM();
-       port[5]=1;
+       port[11]=1;
       sleep(1*0.3);
       //mMI.switchM();
-       port[5]=0;
+       port[11]=0;
       bMI.switchB();
   }
      else if (capt.getval()==2){
        mMI.setsens(1);
        //mMI.switchM();
-        port[5]=1;
-      sleep(2*0.3);
+        port[11]=1;
+      sleep(2);
       //mMI.switchM();
-      port[5]=0;
+      port[11]=0;
       bMI.switchB();
   }
      else if (capt.getval()==3){
 	mMI.setsens(1);  
 	//mMI.switchM();
-	 port[5]=1;
+	 port[11]=1;
       sleep(3*0.3);
       //mMI.switchM();
-      port[5]=0;
+      port[11]=0;
       bMI.switchB();
   }
      else if (capt.getval()==-1){
 	mMI.setsens(-1);  
 	//mMI.switchM();
-	 port[5]=1;
+	 port[11]=1;
       sleep(1*0.3);
       //mMI.switchM();
-      port[5]=0;
+      port[11]=0;
       bMI.switchB();
   }
      else if (capt.getval()==-2){
 	mMI.setsens(-1);  
 	//mMI.switchM();
-	 port[5]=1;
-      sleep(2*0.3);
+	 port[11]=1;
+      sleep(2);
       //mMI.switchM();
-      port[5]=0;
+      port[11]=0;
       bMI.switchB();
   }
      else if (capt.getval()==-3){
 	mMI.setsens(-1);  
 	//mMI.switchM();
-	 port[5]=1;
+	 port[11]=1;
       sleep(3*0.3);
       //mMI.switchM();
-      port[5]=0;
+      port[11]=0;
       bMI.switchB();
   }
 

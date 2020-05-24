@@ -37,7 +37,7 @@ void Board::loop(){
   // accordeur SmartCh(B1,B2,B3,B4,B5,B6,M1,M2,M3,M4,M5,M6,C);
   //cout << Monuser->getb3().getstate() ;
 
-  cout << Monaccordeur->getbsol().getstate() << "chadi";
+  //cout << Monaccordeur->getbsol().getstate() << "chadi";
   Monaccordeur->accorder(note,io);
   // char buf[100];
   //  char buf2[100];
