@@ -54,7 +54,7 @@ void Capteur::run(){
 }
 
 
-Actionneur::Actionneur(int t):Device(),temps(t) {
+Actionneur::Actionneur(float t):Device(),temps(t) {
 }
 
 
@@ -99,9 +99,10 @@ void Moteur::run(){
     while(1){
     if(ptrmem!=NULL)
       state=*ptrmem;
-    if (state==true)
-      cout << "((((cha3el))))\n";
-   
+    if ((state==true) and (sens==1))
+      cout << "((((moteur sens positif allumé : en train d'accorder))))\n";
+else if ((state==true) and (sens==-1))
+   cout << "((((moteur sens négatif allumé : en train d'accorder))))\n";
     sleep(temps);
     }
 }
@@ -172,7 +173,7 @@ if(state==1){
    
   *ptrmem=1 ;
   //a voir apres sa
-  // sprintf(S.buf,"%d",corde);
+   //sprintf(S.buf,"%c",corde);
  }
  else{
 

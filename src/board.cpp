@@ -11,6 +11,8 @@ int main(){
  
   // achat des senseurs et actionneurs
 
+  
+
   Button  B1(false,'e');
   Button & MarefB1 = B1;
    Button  B2(false,'B');

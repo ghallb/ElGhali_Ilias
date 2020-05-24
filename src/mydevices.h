@@ -63,12 +63,12 @@ Capteur( const Capteur & C);
 
 class Actionneur : public Device {
  protected :
-  int temps ;
+  float temps ;
   // temps entre deux prises de valeur
  public :
   //constructeur
  
-  Actionneur (int t) ;
+  Actionneur (float t) ;
   virtual void run();
 };
   
@@ -90,7 +90,7 @@ class Button : public Actionneur{
  private :
   bool state ;
   char corde;
-  //  I2CActuatorScreen S;
+  //I2CActuatorScreen & S;
 
  public:
   Button(bool b,char c);
