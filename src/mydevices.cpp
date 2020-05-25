@@ -14,28 +14,33 @@ Capteur::Capteur(const Capteur & C) : Device(), val(C.val), temps(C.temps){
   alea=1;
 }
 void Capteur::traduire(string note){
- 
+ cout<<"looooo";
     if (note=="+"){
       val= 1;
     }
-     if (note=="++"){
+     else if (note=="++"){
       val= 2;
     }
-      if (note=="+++"){
+      else if (note=="+++"){
       val= 3;
     }
-       if (note=="-"){
+       else if (note=="-"){
       val=-1;
     }
-        if (note=="--"){
+        else if (note=="--"){
       val= -2;
     }
-	 if (note=="---"){
+	 else if (note=="---"){
       val= -3;
     }
-	  if (note=="0"){
+	  else if (note=="0"){
 	    val=0;
     }
+ else  {
+          
+	 val= -100000;
+    }
+
 }
 
 
@@ -83,21 +88,17 @@ void Moteur::setsens(int i) {
     }
 }
 
-void Moteur::run(){
-
-    while(1){
+void Moteur:: run() {
+ while(1){
+	
     if(ptrmem!=NULL)
       state=*ptrmem;
-    if ((state==true) and (sens==1)){ sleep(1);
-      cout << "((((moteur sens positif allumé : en train d'accorder))))\n";
-}
-     
+    if ((state==true) and (sens==1)){
+sleep(1);
+      cout << "((Le moteur de la corde " << "["<<this->corde<<"]"<< "  tourne au sens NEGATIF : en train d'accorder))\n";}
 else if ((state==true) and (sens==-1)){
 sleep(1);
-   cout << "((((moteur sens négatif allumé : en train d'accorder))))\n";
-}
-
-   
+   cout << "((Le moteur de la corde " << "["<<this->corde<<"]"<< "  tourne au sens POSITIF : en train d'accorder))\n";}
     sleep(temps);
     }
 }

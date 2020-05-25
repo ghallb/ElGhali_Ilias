@@ -29,7 +29,7 @@ class accordeur {
    //Méthode accorder qui gère tout l'accordage : relevé du capteur, interprétation, allumage des bonnes leds, allumages du bon moteur associé à la bonne corde. Nb : prend en argument la note à traduire par le capteur, et un unsigned short qui correspondra au io de board lors de l'appel de la fonction
    void accorder(string note,unsigned short port[MAX_IO_PIN]) ;
    
-
+   Button & getB(Button & B);
    
 };
 

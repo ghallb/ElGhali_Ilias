@@ -35,13 +35,30 @@ void Board::loop(){
    this->io[15]=0;
    this->io[14]=0;
    this->io[13]=0;
-   
+   try{
+
    Monuser->choisir_corde();
+
    bus.write(1,Monuser->getS().getbuf(),100);
    string note;
+   
    note= Monuser->jouer_note() ;
+   //cout << Monaccordeur->getB().getstate();
+
    Monaccordeur->accorder(note,io);
   
+}
+   catch(string const & chaine){
+   if (chaine== "ERREUR : Mauvais bouton , veuillez mettre un bouton valide"){
+    cerr << chaine << endl ;
+}
+
+  else{
+    
+    cerr << chaine << endl ;
+}
+
+ }  
  }
 
 

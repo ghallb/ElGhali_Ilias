@@ -24,29 +24,35 @@ cin >> ok;
     //Remplir le buffer du screen par le nom de la note
     S.setbuf('e');
  }
-   if (ifstream("si")) {
+   else if (ifstream("si")) {
     b2.switchB();
    S.setbuf('B');
  }
-    if (ifstream("sol")) {
+    else if (ifstream("sol")) {
      
     b3.switchB();
+
    S.setbuf('G');
 
  }
-     if (ifstream("ré")) {
+     else if (ifstream("ré")) {
     b4.switchB();
 
 S.setbuf('D');
  }
-      if (ifstream("la")) {
+      else if (ifstream("la")) {
     b5.switchB();
 S.setbuf('A');
 
  }
-       if (ifstream("MI")) {
+       else if (ifstream("MI")) {
     b6.switchB();
 S.setbuf('E');
+
+ }
+ 
+     else {
+   throw string("ERREUR : Mauvais bouton , veuillez mettre un bouton valide");
 
  }
   
