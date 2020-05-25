@@ -116,6 +116,7 @@ public:
     // representation de la liaison terminal
   Terminal Serial;
 
+  // Le board a besoin d'un accordeur et d'un user dans notre projet
   accordeur * Monaccordeur;
   user * Monuser;
 
@@ -123,6 +124,7 @@ public:
     // threads representant chaque senseur/actionneur sur le bus I2C
   thread *tabthreadbus[MAX_I2C_DEVICES];
 
+//Création d'une méthode supplémentaire permettant d'initialiser notre board avec un accordeur et un user (en pointeurs)
   void initAU(accordeur * mine, user * mineU);
     
 // simulation de la boucle de controle arduino

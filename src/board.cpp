@@ -9,7 +9,7 @@
 
 int main(){
  
-  // achat des senseurs et actionneurs
+  // achat des senseurs et actionneurs et création d'une référence pour chacun
 
   I2CActuatorScreen S1;
   I2CActuatorScreen & MarefS1 = S1;
@@ -51,11 +51,8 @@ MarefLb,MarefLv,MarefLr);
 		 
   // creation d'une board
 		 Board esp8266;
+  //Initualisation du board avec le User et l'accordeur précédents
 		 esp8266.initAU(&SmartCh,&U);
-
- 
-  //I2CActuatorScreen screen;
-  
   
  
  

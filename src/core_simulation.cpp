@@ -116,11 +116,7 @@ void Device::setI2CAddr(int addr, I2C * bus){
   i2cbus=bus;
 }
 
-// classe representant une carte arduino
 
-//Board :: Board()   {
-
-//}
 
 void Board :: initAU(accordeur * mine, user * mineU){
   Monaccordeur = mine;
