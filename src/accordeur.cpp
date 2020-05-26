@@ -10,9 +10,7 @@
 accordeur ::  accordeur(Button & b1 ,Button & b2,Button & b3,Button & b4,Button & b5,Button & b6,Moteur & m1,Moteur & m2,Moteur & m3,Moteur & m4,Moteur & m5,Moteur & m6,Capteur & c, ILED & L1,ILED & L2,ILED & L3) : bmi(b1) ,bsi(b2),bsol(b3),bre(b4),bla(b5),bMI(b6),mmi(m1),msi(m2),msol(m3),mre(m4),mla(m5),mMI(m6),
 capt(c), LB(L1), LV(L2), LR(L3) {}
 
-Button & accordeur:: getB(Button & B) {
-return B;
-}
+
 
 //Méthode accorder qui gère tout l'accordage 
 void accordeur :: accorder(string note,unsigned short port[]) {

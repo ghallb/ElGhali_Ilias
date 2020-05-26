@@ -21,8 +21,8 @@ private:
 public :
    //constructeur 
   Capteur(int t,int  s);
-  //Surcharge
-  Capteur( const Capteur & C);
+  
+  
 
   // méthode qui va traduire le string reçu "++" ou "-" en chiffre interprétable
   void traduire(std::string note);
@@ -63,8 +63,6 @@ int sens ;
 public :
 //Constructeur
 Moteur(char c) ;
-//Surcharge
-Moteur( const Moteur & M);
 //méthode permettant de fixer le sens de rotation du moteur
 void setsens(int i) ;
 virtual void run() ;
@@ -80,8 +78,7 @@ class Button : public Actionneur{
  public:
   //Constructeur
   Button(bool b,char c);
-  //Surcharge
-  Button( const Button & B);
+  
   //assesseur de l'attribut state
   bool getstate();
   //méthode pour changer l'état du bouton

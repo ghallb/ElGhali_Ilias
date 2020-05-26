@@ -10,11 +10,11 @@ using namespace std;
 Capteur::Capteur(int t, int s) : Device(), val(s), temps(t){
   alea=1;
 }
-Capteur::Capteur(const Capteur & C) : Device(), val(C.val), temps(C.temps){
-  alea=1;
-}
+//Capteur::Capteur(const Capteur & C) : Device(), val(C.val), temps(C.temps){
+  //alea=1;
+//}
 void Capteur::traduire(string note){
- cout<<"looooo";
+ 
     if (note=="+"){
       val= 1;
     }
@@ -76,8 +76,8 @@ void Actionneur::run(){
 Moteur::Moteur(char c):Actionneur(0.9),corde(c),state(false),sens(0) {
 }
 
-Moteur::Moteur( const Moteur & M):Actionneur(1),corde(M.corde),state(false),sens(1) {
-}
+//Moteur::Moteur( const Moteur & M):Actionneur(1),corde(M.corde),state(false),sens(1) {
+//}
 
 void Moteur::setsens(int i) {
   //exception si i vaut autre chose
@@ -112,8 +112,8 @@ sleep(1);
 Button::Button(bool b,char c):Actionneur(3), state(b),corde(c){
 }
 
-Button :: Button(const Button & B) : Actionneur(3), state(B.state), corde(B.corde){
-}
+//Button :: Button(const Button & B) : Actionneur(3), state(B.state), corde(B.corde){
+//}
 void Button::switchB() {
   if(this->state==true){
     this->state=false;

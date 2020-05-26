@@ -14,8 +14,7 @@
 #include <string>
 #include <thread>
 #include <mutex>
-/* #include "accordeur.h" */
-/* #include "user.h" */
+
 
 #include <string>
 #define DELAY 3
@@ -135,7 +134,7 @@ public:
       void i2c(int addr,Device& dev);
  // fonction arduino : configuration d'une pin en entree ou en sortie
     void pinMode(int p,enum typeio t);
-  // fonction arduino : ecriture HIGH ou LOW sur une pin
+  // fonctamion arduino : ecriture HIGH ou LOW sur une pin
     void digitalWrite(int i, int l);
     // fonction arduino : lecture digital sur une pin
     int digitalRead(int i);
