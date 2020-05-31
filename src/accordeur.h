@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "mydevices.h"
-//#include "core_simulation.h"
+
 
 
 

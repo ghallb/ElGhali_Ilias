@@ -38,7 +38,7 @@ void accordeur :: accorder(string note,unsigned short port[]) {
       //Eteindre la LED rouge
       port[15]=0;
       sleep(1.3);
-      //Allumer la LED verte pour indiquer que l'accordage est terminé
+      //Allumer la LED verte pour indiquer que l'accordage st terminé
       port[14]=1;
       sleep(2);
       //Eteindre la LED verte

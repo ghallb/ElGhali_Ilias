@@ -43,7 +43,7 @@ void Board::loop(){
    string note;
    
    note= Monuser->jouer_note() ;
-   //cout << Monaccordeur->getB().getstate();
+   
 
    Monaccordeur->accorder(note,io);
   
